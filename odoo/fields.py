@@ -1111,7 +1111,7 @@ class Field(MetaField('DummyField', (object,), {})):
             new_records = records.browse(new_ids)
             with records.env.protecting(records._field_computed.get(self, [self]), records):
                 if self.relational:
-                    new_records.modified([self.name], before=True)
+                    new_records.modified([self.name])
                 self.write(new_records, value)
                 new_records.modified([self.name])
 
